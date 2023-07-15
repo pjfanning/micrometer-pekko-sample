@@ -1,29 +1,29 @@
-name := "micrometer-akka-sample"
+name := "micrometer-pekko-sample"
 
-scalaVersion := "2.13.10"
+scalaVersion := "2.13.11"
 
-val akkaVersion = "2.6.20"
-val akkaHttpVersion = "10.2.10"
+val pekkoVersion = "1.0.0"
+val pekkoHttpVersion = "0.0.0+4468-963bd592-SNAPSHOT"
 val aspectJVersion = "1.9.19"
-val micrometerVersion = "1.11.0"
+val micrometerVersion = "1.11.2"
 val prometheusVersion = "0.16.0"
 
-ThisBuild / resolvers ++= Resolver.sonatypeOssRepos("snapshots")
+ThisBuild / resolvers += Resolver.ApacheMavenSnapshotsRepo
 
 enablePlugins(JavaAgent)
 javaAgents += "org.aspectj" % "aspectjweaver" % aspectJVersion  % "runtime"
 
 libraryDependencies ++= Seq(
-  "com.github.pjfanning" %% "micrometer-akka" % "0.13.3",
+  "com.github.pjfanning" %% "micrometer-pekko" % "0.14.0",
   "org.aspectj" % "aspectjweaver" % aspectJVersion  % "runtime",
   "io.micrometer" % "micrometer-registry-prometheus" % micrometerVersion,
   "io.prometheus" % "simpleclient" % prometheusVersion,
   "io.prometheus" % "simpleclient_common" % prometheusVersion,
-  "com.typesafe.akka" %% "akka-http" % akkaHttpVersion,
-  "com.typesafe.akka" %% "akka-http-spray-json" % akkaHttpVersion,
-  "com.typesafe.akka" %% "akka-actor" % akkaVersion,
-  "com.typesafe.akka" %% "akka-stream" % akkaVersion,
-  "com.typesafe.akka" %% "akka-slf4j" % akkaVersion,
+  "org.apache.pekko" %% "pekko-http" % pekkoHttpVersion,
+  "org.apache.pekko" %% "pekko-http-spray-json" % pekkoHttpVersion,
+  "org.apache.pekko" %% "pekko-actor" % pekkoVersion,
+  "org.apache.pekko" %% "pekko-stream" % pekkoVersion,
+  "org.apache.pekko" %% "pekko-slf4j" % pekkoVersion,
   "ch.qos.logback" % "logback-classic" % "1.3.5"
 )
 

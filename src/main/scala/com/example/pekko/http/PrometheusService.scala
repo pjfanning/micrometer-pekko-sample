@@ -1,12 +1,12 @@
-package com.example.akka.http
+package com.example.pekko.http
 
 import java.io.{ OutputStreamWriter, PipedInputStream, PipedOutputStream }
 
 import scala.concurrent.{ ExecutionContext, Future }
 
-import akka.http.scaladsl.model.{ HttpCharsets, HttpEntity, MediaType }
-import akka.http.scaladsl.server.{ Directives, Route }
-import akka.stream.scaladsl.StreamConverters
+import org.apache.pekko.http.scaladsl.model.{ HttpCharsets, HttpEntity, MediaType }
+import org.apache.pekko.http.scaladsl.server.{ Directives, Route }
+import org.apache.pekko.stream.scaladsl.StreamConverters
 import io.prometheus.client.CollectorRegistry
 import io.prometheus.client.exporter.common.TextFormat
 
