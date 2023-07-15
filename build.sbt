@@ -14,7 +14,7 @@ enablePlugins(JavaAgent)
 javaAgents += "org.aspectj" % "aspectjweaver" % aspectJVersion  % "runtime"
 
 libraryDependencies ++= Seq(
-  "com.github.pjfanning" %% "micrometer-pekko" % "0.14.0",
+  "com.github.pjfanning" %% "micrometer-pekko" % "0.15.0",
   "org.aspectj" % "aspectjweaver" % aspectJVersion  % "runtime",
   "io.micrometer" % "micrometer-registry-prometheus" % micrometerVersion,
   "io.prometheus" % "simpleclient" % prometheusVersion,
