@@ -2,7 +2,7 @@ name := "micrometer-pekko-sample"
 
 scalaVersion := "2.13.11"
 
-val pekkoVersion = "1.0.0"
+val pekkoVersion = "1.0.1"
 val pekkoHttpVersion = "0.0.0+4468-963bd592-SNAPSHOT"
 val aspectJVersion = "1.9.19"
 val micrometerVersion = "1.11.2"
