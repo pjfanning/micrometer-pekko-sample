@@ -3,12 +3,12 @@ name := "micrometer-pekko-sample"
 scalaVersion := "2.13.11"
 
 val pekkoVersion = "1.0.1"
-val pekkoHttpVersion = "0.0.0+4468-963bd592-SNAPSHOT"
+val pekkoHttpVersion = "1.0.0"
 val aspectJVersion = "1.9.19"
 val micrometerVersion = "1.11.2"
 val prometheusVersion = "0.16.0"
 
-ThisBuild / resolvers += Resolver.ApacheMavenSnapshotsRepo
+//ThisBuild / resolvers += Resolver.ApacheMavenSnapshotsRepo
 
 enablePlugins(JavaAgent)
 javaAgents += "org.aspectj" % "aspectjweaver" % aspectJVersion  % "runtime"
