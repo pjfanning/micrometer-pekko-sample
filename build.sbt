@@ -6,7 +6,7 @@ val pekkoVersion = "1.0.1"
 val pekkoHttpVersion = "1.0.0"
 val aspectJVersion = "1.9.20.1"
 val micrometerVersion = "1.12.0"
-val prometheusVersion = "0.16.0"
+val prometheusVersion = "1.1.0"
 
 //ThisBuild / resolvers += Resolver.ApacheMavenSnapshotsRepo
 
@@ -17,8 +17,7 @@ libraryDependencies ++= Seq(
   "com.github.pjfanning" %% "micrometer-pekko" % "0.15.0",
   "org.aspectj" % "aspectjweaver" % aspectJVersion  % "runtime",
   "io.micrometer" % "micrometer-registry-prometheus" % micrometerVersion,
-  "io.prometheus" % "simpleclient" % prometheusVersion,
-  "io.prometheus" % "simpleclient_common" % prometheusVersion,
+  "io.prometheus" % "prometheus-metrics-core" % prometheusVersion,
   "org.apache.pekko" %% "pekko-http" % pekkoHttpVersion,
   "org.apache.pekko" %% "pekko-http-spray-json" % pekkoHttpVersion,
   "org.apache.pekko" %% "pekko-actor" % pekkoVersion,
