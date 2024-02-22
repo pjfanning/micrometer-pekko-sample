@@ -4,8 +4,8 @@ scalaVersion := "2.13.12"
 
 val pekkoVersion = "1.0.2"
 val pekkoHttpVersion = "1.0.1"
-val aspectJVersion = "1.9.21"
-val micrometerVersion = "1.12.2"
+val aspectJVersion = "1.9.21.1"
+val micrometerVersion = "1.12.3"
 val prometheusVersion = "1.1.0"
 
 //ThisBuild / resolvers += Resolver.ApacheMavenSnapshotsRepo
