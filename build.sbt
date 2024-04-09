@@ -4,7 +4,7 @@ scalaVersion := "2.13.13"
 
 val pekkoVersion = "1.0.2"
 val pekkoHttpVersion = "1.0.1"
-val aspectJVersion = "1.9.21.1"
+val aspectJVersion = "1.9.21.2"
 val micrometerVersion = "1.12.5"
 val prometheusVersion = "1.1.0"
 
