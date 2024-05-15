@@ -1,14 +1,12 @@
 package com.example.pekko.http
 
-import java.io.{ OutputStreamWriter, PipedInputStream, PipedOutputStream }
-
-import scala.concurrent.{ ExecutionContext, Future }
-
-import org.apache.pekko.http.scaladsl.model.{ HttpCharsets, HttpEntity, MediaType }
-import org.apache.pekko.http.scaladsl.server.{ Directives, Route }
+import java.io.{PipedInputStream, PipedOutputStream}
+import scala.concurrent.{ExecutionContext, Future}
+import org.apache.pekko.http.scaladsl.model.{HttpCharsets, HttpEntity, MediaType}
+import org.apache.pekko.http.scaladsl.server.{Directives, Route}
 import org.apache.pekko.stream.scaladsl.StreamConverters
-import io.prometheus.client.CollectorRegistry
-import io.prometheus.client.exporter.common.TextFormat
+import io.prometheus.metrics.expositionformats.ExpositionFormats
+import io.prometheus.metrics.model.registry.PrometheusRegistry
 
 object PrometheusService extends Directives {
 
@@ -19,11 +17,12 @@ object PrometheusService extends Directives {
     path("metrics") {
       complete {
         val in = new PipedInputStream
-        val out = new OutputStreamWriter(new PipedOutputStream(in), HttpCharsets.`UTF-8`.value)
+        val out = new PipedOutputStream(in)
         val byteSource = StreamConverters.fromInputStream(() => in)
         Future {
           try {
-            TextFormat.write004(out, CollectorRegistry.defaultRegistry.metricFamilySamples())
+            ExpositionFormats.init().getPrometheusTextFormatWriter()
+              .write(out, PrometheusRegistry.defaultRegistry.scrape())
             out.flush()
           } finally {
             out.close()
