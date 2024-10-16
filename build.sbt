@@ -1,6 +1,6 @@
 name := "micrometer-pekko-sample"
 
-scalaVersion := "2.13.14"
+scalaVersion := "2.13.15"
 
 val pekkoVersion = "1.0.3"
 val pekkoHttpVersion = "1.0.1"
