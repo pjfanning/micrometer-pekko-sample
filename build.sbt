@@ -23,7 +23,7 @@ libraryDependencies ++= Seq(
   "org.apache.pekko" %% "pekko-actor" % pekkoVersion,
   "org.apache.pekko" %% "pekko-stream" % pekkoVersion,
   "org.apache.pekko" %% "pekko-slf4j" % pekkoVersion,
-  "ch.qos.logback" % "logback-classic" % "1.3.14"
+  "ch.qos.logback" % "logback-classic" % "1.3.15"
 )
 
 //uncomment this add-opens -- needed for Java 16 and above runtimes -- will cause issues if used with Java 8 runtime
