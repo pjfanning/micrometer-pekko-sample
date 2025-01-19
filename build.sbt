@@ -1,11 +1,11 @@
 name := "micrometer-pekko-sample"
 
-scalaVersion := "2.13.15"
+scalaVersion := "2.13.16"
 
 val pekkoVersion = "1.0.3"
 val pekkoHttpVersion = "1.0.1"
 val aspectJVersion = "1.9.22.1"
-val micrometerVersion = "1.13.6"
+val micrometerVersion = "1.14.3"
 val prometheusVersion = "1.3.1"
 
 //ThisBuild / resolvers += Resolver.ApacheMavenSnapshotsRepo
