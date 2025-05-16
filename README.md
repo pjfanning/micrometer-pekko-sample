@@ -16,12 +16,12 @@ This is setup in [Main.scala](https://github.com/pjfanning/micrometer-pekko-samp
 This sample uses [sbt-javaagent](https://github.com/sbt/sbt-javaagent) to enable aspectjweaver.
 This plugin basically adds this to the java runtime command.
 
-```-javaagent:/path/to/aspectjweaver-1.9.21.2.jar```
+```-javaagent:/path/to/aspectjweaver-1.9.24.jar```
 
 If you want to use micrometer-pekko with your own application, ensure that you startup script adds something like this:
 
 ```bash
-JAVA_AGENT="-javaagent:$BASE/lib/aspectjweaver-1.9.21.2.jar"
+JAVA_AGENT="-javaagent:$BASE/lib/aspectjweaver-1.9.24.jar"
 $JAVA_HOME/bin/java $JAVA_AGENT -cp $CP $JVM_OPTS $CLASS_NAME
 ```
 
