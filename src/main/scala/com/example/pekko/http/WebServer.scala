@@ -13,8 +13,9 @@ object WebServer {
 
     implicit val executionContext: ExecutionContextExecutor = system.dispatcher
 
+    val routes = PrometheusService.route ~ TypedActorService.route
     for {
-      bindingFuture <- Http().newServerAt("0.0.0.0", 12345).bind(PrometheusService.route)
+      bindingFuture <- Http().newServerAt("0.0.0.0", 12345).bind(routes)
       waitOnFuture  <- Future.never
     } yield waitOnFuture
   }

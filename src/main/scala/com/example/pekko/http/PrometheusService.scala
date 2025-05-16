@@ -1,12 +1,13 @@
 package com.example.pekko.http
 
-import java.io.{PipedInputStream, PipedOutputStream}
-import scala.concurrent.{ExecutionContext, Future}
 import org.apache.pekko.http.scaladsl.model.{HttpCharsets, HttpEntity, MediaType}
 import org.apache.pekko.http.scaladsl.server.{Directives, Route}
 import org.apache.pekko.stream.scaladsl.StreamConverters
 import io.prometheus.metrics.expositionformats.ExpositionFormats
 import io.prometheus.metrics.model.registry.PrometheusRegistry
+
+import java.io.{PipedInputStream, PipedOutputStream}
+import scala.concurrent.{ExecutionContext, Future}
 
 object PrometheusService extends Directives {
 
