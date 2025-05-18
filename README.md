@@ -29,6 +29,8 @@ To query the metrics endpoint, use:
 
 ```curl http://localhost:12345/metrics```
 
+The code to respond to the HTTP request uses pekko-http which indirectly uses pekko actors under the hood. There is a second enspoint, `http://localhost:12345/typed` that can be called to invoked a typed actor so this will add extra metrics to track.
+
 ## Running with Java 16 and above
 
 Note that the `build.sbt` has this:
