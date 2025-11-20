@@ -1,12 +1,12 @@
 name := "micrometer-pekko-sample"
 
-scalaVersion := "2.13.16"
+scalaVersion := "2.13.17"
 
-val pekkoVersion = "1.1.3"
-val pekkoHttpVersion = "1.2.0"
-val aspectJVersion = "1.9.24"
-val micrometerVersion = "1.15.0"
-val prometheusVersion = "1.3.6"
+val pekkoVersion = "1.3.0"
+val pekkoHttpVersion = "1.3.0"
+val aspectJVersion = "1.9.25"
+val micrometerVersion = "1.16.0"
+val prometheusVersion = "1.4.3"
 
 //ThisBuild / resolvers += Resolver.ApacheMavenSnapshotsRepo
 
@@ -24,7 +24,7 @@ libraryDependencies ++= Seq(
   "org.apache.pekko" %% "pekko-actor-typed" % pekkoVersion,
   "org.apache.pekko" %% "pekko-stream" % pekkoVersion,
   "org.apache.pekko" %% "pekko-slf4j" % pekkoVersion,
-  "ch.qos.logback" % "logback-classic" % "1.3.15"
+  "ch.qos.logback" % "logback-classic" % "1.3.16"
 )
 
 //uncomment this add-opens -- needed for Java 16 and above runtimes -- will cause issues if used with Java 8 runtime
