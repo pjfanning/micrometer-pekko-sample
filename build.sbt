@@ -1,11 +1,11 @@
 name := "micrometer-pekko-sample"
 
-scalaVersion := "2.13.17"
+scalaVersion := "2.13.18"
 
-val pekkoVersion = "1.3.0"
+val pekkoVersion = "1.4.0"
 val pekkoHttpVersion = "1.3.0"
-val aspectJVersion = "1.9.25"
-val micrometerVersion = "1.16.0"
+val aspectJVersion = "1.9.25.1"
+val micrometerVersion = "1.16.1"
 val prometheusVersion = "1.4.3"
 
 //ThisBuild / resolvers += Resolver.ApacheMavenSnapshotsRepo
@@ -14,7 +14,7 @@ enablePlugins(JavaAgent)
 javaAgents += "org.aspectj" % "aspectjweaver" % aspectJVersion  % "runtime"
 
 libraryDependencies ++= Seq(
-  "com.github.pjfanning" %% "micrometer-pekko" % "0.18.0",
+  "com.github.pjfanning" %% "micrometer-pekko" % "0.19.0",
   "org.aspectj" % "aspectjweaver" % aspectJVersion  % "runtime",
   "io.micrometer" % "micrometer-registry-prometheus" % micrometerVersion,
   "io.prometheus" % "prometheus-metrics-core" % prometheusVersion,
