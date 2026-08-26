@@ -2,11 +2,11 @@ name := "micrometer-pekko-sample"
 
 scalaVersion := "2.13.18"
 
-val pekkoVersion = "1.4.0"
-val pekkoHttpVersion = "1.3.0"
+val pekkoVersion = "1.7.0"
+val pekkoHttpVersion = "1.4.0"
 val aspectJVersion = "1.9.25.1"
-val micrometerVersion = "1.16.1"
-val prometheusVersion = "1.4.3"
+val micrometerVersion = "1.17.1"
+val prometheusVersion = "1.8.0"
 
 //ThisBuild / resolvers += Resolver.ApacheMavenSnapshotsRepo
 
@@ -14,7 +14,7 @@ enablePlugins(JavaAgent)
 javaAgents += "org.aspectj" % "aspectjweaver" % aspectJVersion  % "runtime"
 
 libraryDependencies ++= Seq(
-  "com.github.pjfanning" %% "micrometer-pekko" % "0.19.0",
+  "com.github.pjfanning" %% "micrometer-pekko" % "0.20.0",
   "org.aspectj" % "aspectjweaver" % aspectJVersion  % "runtime",
   "io.micrometer" % "micrometer-registry-prometheus" % micrometerVersion,
   "io.prometheus" % "prometheus-metrics-core" % prometheusVersion,
@@ -27,5 +27,6 @@ libraryDependencies ++= Seq(
   "ch.qos.logback" % "logback-classic" % "1.3.16"
 )
 
-//uncomment this add-opens -- needed for Java 16 and above runtimes -- will cause issues if used with Java 8 runtime
-//run / javaOptions ++= Seq("--add-opens", "java.base/java.lang=ALL-UNNAMED")
+//comment this add-opens -- needed for Java 16 and above runtimes -- if testing with Java 8 runtime
+run / javaOptions ++= Seq("--add-opens", "java.base/java.lang=ALL-UNNAMED")
+

@@ -16,12 +16,12 @@ This is setup in [Main.scala](https://github.com/pjfanning/micrometer-pekko-samp
 This sample uses [sbt-javaagent](https://github.com/sbt/sbt-javaagent) to enable aspectjweaver.
 This plugin basically adds this to the java runtime command.
 
-```-javaagent:/path/to/aspectjweaver-1.9.24.jar```
+```-javaagent:/path/to/aspectjweaver-1.9.25.1.jar```
 
 If you want to use micrometer-pekko with your own application, ensure that you startup script adds something like this:
 
 ```bash
-JAVA_AGENT="-javaagent:$BASE/lib/aspectjweaver-1.9.24.jar"
+JAVA_AGENT="-javaagent:$BASE/lib/aspectjweaver-1.9.25.1.jar"
 $JAVA_HOME/bin/java $JAVA_AGENT -cp $CP $JVM_OPTS $CLASS_NAME
 ```
 
@@ -35,7 +35,7 @@ The code to respond to the HTTP request uses pekko-http which indirectly uses pe
 
 Note that the `build.sbt` has this:
 ```
-//uncomment this add-opens -- needed for Java 16 and above runtimes -- will cause issues if used with Java 8 runtime
+//comment this add-opens -- needed for Java 16 and above runtimes -- if testing with Java 8 runtime
 run / javaOptions ++= Seq("--add-opens", "java.base/java.lang=ALL-UNNAMED")
 ```
 
